@@ -68,7 +68,7 @@ export default function App() {
         </Button>
       </div>
       {selectedFriend && (
-        <FormSplitBill
+        <FormSplitBill key={selectedFriend.id}
           friends={friends}
           selectedFriend={selectedFriend}
           onSplitBill={handleSplitBill}
@@ -82,6 +82,7 @@ function Button({ children, onClick }) {
   return (
     <button className="button" onClick={onClick}>
       {children}
+      
     </button>
   );
 }
@@ -97,7 +98,9 @@ function FriendList({ friends, onSelection, selectedFriend }) {
           selectedFriend={selectedFriend}
         />
       ))}
+    
     </ul>
+    
   );
 }
 
